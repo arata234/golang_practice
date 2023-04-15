@@ -20,4 +20,11 @@ func main() {
 	}
 	fmt.Println(m2)
 
+	m3 := make(map[int]Character)
+	m3[1] = Character{Name: "Gen Hoshino"}
+
+	for _, v := range m {
+		fmt.Println(v)
+	}
+
 }
