@@ -2,9 +2,6 @@ package main
 
 import "fmt"
 
-//interface
-// Assigning common properties to different types
-
 type Stringfy interface {
 	ToString() string
 }
@@ -14,6 +11,7 @@ type Person struct {
 	Age  int
 }
 
+// 同じ名前の関数を定義する
 func (p *Person) ToString() string {
 	return fmt.Sprintf("Name=%v, Age=%v", p.Name, p.Age)
 }
@@ -23,14 +21,15 @@ type Car struct {
 	Model  string
 }
 
+// 同じ名前の関数を定義する
 func (c *Car) ToString() string {
 	return fmt.Sprintf("Number=%v, Model=%v", c.Number, c.Model)
 }
 
 func main() {
 	vs := []Stringfy{
-		&Person{Name: "Tom", Age: 21},
-		&Car{Number: "123-456", Model: "MX-3010"},
+		&Person{Name: "Kohei", Age: 33},
+		&Car{Number: "12-34", Model: "MINI Cooper"},
 	}
 
 	for _, v := range vs {
