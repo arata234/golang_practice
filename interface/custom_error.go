@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+/*
+type error interface {
+	Error() string
+}
+*/
 type MyError struct {
 	Message string
 	ErrCode int
@@ -12,7 +17,7 @@ func (e *MyError) Error() string {
 }
 
 func RaiseError() error {
-	return &MyError{Message: "error", ErrCode: 400}
+	return &MyError{Message: "custom_error", ErrCode: 400}
 }
 
 func main() {
