@@ -16,9 +16,9 @@ func (u *User) SetName(name string) {
 }
 
 func main() {
-	user1 := User{Name: "user1"}
+	user1 := User{Name: "user1", Age: 1}
+	// fmt.Println(user1)
 	user1.SayName()
-	user1.SetName("Arata")
-	user1.SayName()
-
+	user1.SetName("tanaka")
+	fmt.Println(user1)
 }
