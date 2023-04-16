@@ -3,48 +3,45 @@ package main
 import "fmt"
 
 type User struct {
-	Name string // init [ ]
-	Age  int    // init [0]
+	Name string
+	Age  int
+	// X, Y int
 }
 
 func UpdateUser(user User) {
-	user.Name = "A"
-	user.Age = 1000
+	user.Name = "updateuser"
 }
 
-func UpdateUser2(user *User) {
-	user.Name = "A"
-	user.Age = 1000
+func UpdateUser_pointer(user *User) {
+	user.Name = "updateuser_pointer"
 }
 
 func main() {
-	var user1 User
-	//fmt.Println(user1)
-	user1.Name = "Tom"
-	user1.Age = 18
+	var user1 User = User{Name: "user1", Age: 1}
 	fmt.Println(user1)
 
-	user2 := User{}
-	user2.Name = "Liz"
-	user2.Age = 14
+	user2 := User{Name: "user2", Age: 2}
 	fmt.Println(user2)
 
-	user3 := User{Name: "Bob", Age: 25}
+	user3 := User{"user3", 3}
 	fmt.Println(user3)
 
-	user4 := User{"Monica", 29}
+	var user4 User = User{"user4", 4}
 	fmt.Println(user4)
 
-	user5 := new(User)
+	user5 := User{}
 	fmt.Println(user5)
 
-	user6 := &User{}
+	// address
+	user6 := new(User)
 	fmt.Println(user6)
+	user7 := &User{}
+	fmt.Println(user7)
 
 	UpdateUser(user1)
-	UpdateUser2(user6)
-
 	fmt.Println(user1)
-	fmt.Println(user6)
+
+	UpdateUser_pointer(user6)
+	fmt.Println(*user6)
 
 }
