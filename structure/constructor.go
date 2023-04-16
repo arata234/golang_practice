@@ -2,18 +2,15 @@ package main
 
 import "fmt"
 
-type Character struct {
+type User struct {
 	Name string
 	Age  int
 }
 
-func NewCharacter(name string, age int) *Character {
-	return &Character{Name: name, Age: age}
+func NewUser(name string, age int) *User {
+	return &User{Name: name, Age: age}
 }
-
 func main() {
-	c1 := Character{"Gen Hoshino", 42}
-	c2 := NewCharacter("Osamu Mukai", 41)
-	fmt.Println(c1)
-	fmt.Println(*c2)
+	user1 := NewUser("user1", 1)
+	fmt.Println(*user1)
 }
